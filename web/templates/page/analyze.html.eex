@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h2>Analysis for <%= @url %></h2>
+</div>
+
+<%= if length(@broken_links) > 0 do %>
+  <h4>Broken links:</h4>
+
+  <ul>
+    <%= for broken_link <- @broken_links do %>
+      <li>
+        [<%= broken_link.text %>](<%= broken_link.href %>)
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>No broken links here.</h4>
+<% end %>
